@@ -47,12 +47,12 @@
     <div class="file-time">
       <span class="committed-at">
         
-          Updated <time class='js-timeago' datetime='2024-01-11 23:35:38 -0600'>2024-01-11 23:35:38 -0600</time>
+          Updated <time class='js-timeago' datetime='2024-01-12 01:06:37 -0600'>2024-01-12 01:06:37 -0600</time>
         
       </span>
     </div>
     <div>
-      <h3><small>. /</small> player.rb</h3>
+      <h3><small>. /</small> board.rb</h3>
     </div>
   </div>
   <!--End Page Title -->
@@ -68,15 +68,15 @@
           </div>
           <div class="code-statistics col-md-11">
             <div class="col-md-3">
-              <div><span class="metric">11</span><small> lines of codes</small></div>
-              <div><span class="metric">1</span><small> methods</small></div>
+              <div><span class="metric">32</span><small> lines of codes</small></div>
+              <div><span class="metric">6</span><small> methods</small></div>
             </div>
             <div class="col-md-3">
-              <div><span class="metric">2.0</span><small> complexity/method</small></div>
+              <div><span class="metric">4.3</span><small> complexity/method</small></div>
               <div><span class="metric">1</span><small> churn</small></div>
             </div>
             <div class="col-md-3">
-              <div><span class="metric">2.0</span><small> complexity</small></div>
+              <div><span class="metric">25.51</span><small> complexity</small></div>
               <div><span class="metric">0</span><small> duplications</small></div>
             </div>
           </div>
@@ -88,8 +88,8 @@
             <li><a href="#" id="toggle-code" class="toggle-button button">code</a></li>
             <li class="active">
               <a href="#" id="toggle-smells" class="toggle-button button">
-                0
-                smell
+                2
+                smells
               </a>
             </li>
           </ul>
@@ -99,13 +99,34 @@
 
     <code class="prettyprint linenums lang-ruby file-code js-file-code"># frozen_string_literal: true
 
-# Clase para definir al jugador
-class Player
-  attr_reader :name, :type
+# Clase para definir el tablero del Tic Tac Toe
+class Board
+  attr_reader :board
 
-  def initialize(name, type)
-    @name = name
-    @type = type
+  def initialize
+    @board = Array.new(3) { Array.new(3, &#39; &#39;) }
+  end
+
+  def display_board
+    @board.each { |row| puts row.join(&#39; | &#39;) }
+    puts &#39;-----&#39; * 2
+  end
+
+  def update_cell(row, col, value)
+    @board[row][col] = value
+  end
+
+  def flip
+    @board.transpose
+  end
+
+  def diagonals
+    center = @board[1][1]
+    [[@board[0][0], center, @board[2][2]], [@board[0][2], center, @board[2][0]]]<ol class="nocode errors smells">  <li>    <div class="description">      <div class="heading">        <span>          <i class="fa fa-warning" aria-hidden="true"></i>          <a href="https://github.com/troessner/reek/blob/master/docs/Duplicate-Method-Call.md" target="_blank"><b>DuplicateMethodCall</b></a>        </span>      </div>      <span>Board#diagonals calls '@board[0]' 2 times</span>          </div>  </li>  <li>    <div class="description">      <div class="heading">        <span>          <i class="fa fa-warning" aria-hidden="true"></i>          <a href="https://github.com/troessner/reek/blob/master/docs/Duplicate-Method-Call.md" target="_blank"><b>DuplicateMethodCall</b></a>        </span>      </div>      <span>Board#diagonals calls '@board[2]' 2 times</span>          </div>  </li></ol>
+  end
+
+  def boarding(new_board)
+    @board = new_board
   end
 end
 </code>
