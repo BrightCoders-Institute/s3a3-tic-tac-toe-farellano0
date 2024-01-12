@@ -3,6 +3,7 @@
 require 'minitest/autorun'
 require_relative '../src/player'
 
+# :reek:InstanceVariableAssumption
 # Clase para probar la clase Player
 class PlayerTest < Minitest::Test
   def setup

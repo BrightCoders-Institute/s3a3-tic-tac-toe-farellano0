@@ -3,6 +3,7 @@
 require 'minitest/autorun'
 require_relative '../src/board'
 
+# :reek:InstanceVariableAssumption
 # Clase para ejecutar las pruebas de la clase Board
 class BoardTest < Minitest::Test
   def setup

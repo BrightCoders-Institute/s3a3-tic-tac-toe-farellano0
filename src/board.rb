@@ -23,7 +23,15 @@ class Board
 
   def diagonals
     center = @board[1][1]
-    [[@board[0][0], center, @board[2][2]], [@board[0][2], center, @board[2][0]]]
+    [[first_row(0), center, third_col(2)], [first_row(2), center, third_col(0)]]
+  end
+
+  def first_row(place)
+    @board[0][place]
+  end
+
+  def third_col(place)
+    @board[2][place]
   end
 
   def boarding(new_board)
