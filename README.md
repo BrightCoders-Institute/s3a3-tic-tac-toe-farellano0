@@ -39,8 +39,6 @@ Para instalar y ejecutar este proyecto, sigue estos pasos:
 ## Cómo Utilizar
 Para jugar Tic Tac Toe, simplemente ejecuta el script y sigue las instrucciones en pantalla para hacer tus movimientos. Cada jugador elige una posición en el tablero ingresando coordenadas durante su turno.
 
-Por supuesto, aquí tienes una sección adicional para el archivo `README.md` que describe cómo ejecutar las pruebas del proyecto:
-
 ## Pruebas
 
 Este proyecto utiliza MiniTest para pruebas unitarias. Sigue estos pasos para ejecutar las pruebas:
