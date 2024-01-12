@@ -47,7 +47,7 @@
     <div class="file-time">
       <span class="committed-at">
         
-          Updated <time class='js-timeago' datetime='2024-01-12 01:06:37 -0600'>2024-01-12 01:06:37 -0600</time>
+          Updated <time class='js-timeago' datetime='2024-01-12 14:43:58 -0600'>2024-01-12 14:43:58 -0600</time>
         
       </span>
     </div>
@@ -68,12 +68,12 @@
           </div>
           <div class="code-statistics col-md-11">
             <div class="col-md-3">
-              <div><span class="metric">28</span><small> lines of codes</small></div>
+              <div><span class="metric">29</span><small> lines of codes</small></div>
               <div><span class="metric">4</span><small> methods</small></div>
             </div>
             <div class="col-md-3">
               <div><span class="metric">3.1</span><small> complexity/method</small></div>
-              <div><span class="metric">1</span><small> churn</small></div>
+              <div><span class="metric">2</span><small> churn</small></div>
             </div>
             <div class="col-md-3">
               <div><span class="metric">12.59</span><small> complexity</small></div>
@@ -88,7 +88,7 @@
             <li><a href="#" id="toggle-code" class="toggle-button button">code</a></li>
             <li class="active">
               <a href="#" id="toggle-smells" class="toggle-button button">
-                1
+                0
                 smell
               </a>
             </li>
@@ -102,8 +102,9 @@
 require &#39;minitest/autorun&#39;
 require_relative &#39;../src/board&#39;
 
+# :reek:InstanceVariableAssumption
 # Clase para ejecutar las pruebas de la clase Board
-class BoardTest &lt; Minitest::Test<ol class="nocode errors smells">  <li>    <div class="description">      <div class="heading">        <span>          <i class="fa fa-warning" aria-hidden="true"></i>          <a href="https://github.com/troessner/reek/blob/master/docs/Instance-Variable-Assumption.md" target="_blank"><b>InstanceVariableAssumption</b></a>        </span>      </div>      <span>BoardTest assumes too much for instance variable '@board'</span>          </div>  </li></ol>
+class BoardTest &lt; Minitest::Test
   def setup
     @board = Board.new
   end
